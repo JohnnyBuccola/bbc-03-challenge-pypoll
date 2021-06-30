@@ -3,7 +3,7 @@
 Apparently, the results of an election were brought into question once again.  The purpose of this analyis is to audit the raw election results from three separate counties to validate the winner, and to provide additional insights on the voter turnout by county.
 ## Results
 
-The following is a copy of the script's results:
+The following is a copy of the script's output:
 ```
 Election Results
 -------------------------
