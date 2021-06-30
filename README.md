@@ -34,7 +34,7 @@ Winning Percentage: 73.8%
 - The winner of the election was **Diana DeGette** with **272,892** votes, or **73.8%** of the vote share.
 
 ## Summary Statement
-The script above could immediately benefit the election commission for re-use in future elections. It offers a number of benefits over using Excel / VBA.  Primarily, its performance will be much better, especially when used in a larger election with millions of votes.  Secondly, the python script can be used, maintained, and improved outside of an Excel file for use in other elections.  Some ways in which the script could be improved:
+The script above could immediately benefit the election commission for re-use in future elections. It offers a number of benefits over using Excel / VBA.  Primarily, its performance will be much better, especially when used in a larger election with millions of votes.  Secondly, the python script can be used, maintained, and improved outside of the data set (for example, by pushing it into GitHub) for use in other elections.  This would allow the public to review the code in addition to the results.  Some other ways in which the script could be improved:
 
 - If the order of the columns are different from election to election, the user could first be prompted to input the column numbers of the relevant headers. For example, the prompt might say 
     ```
@@ -42,33 +42,4 @@ The script above could immediately benefit the election commission for re-use in
     Please enter the column number that corresponds to 'Candidate Name': 3
     ```
 
-- If multiple .csv files are needed for the analysis, the script could be modified to take in any number of files in the `Resources` folder, and aggregate the results for all files.
-
-
-
-
-
-The raw results were provided in a .csv file with over 369,000 rows.  Each row contains the following information:
-```
-Ballot ID,County,Candidate
-```
-Where `Ballot ID` is an anonymous identifier for the person casting the vote, `County` is the county where the ballot was cast, and `Candidate` is one of three possible candidates. A sample row of data looks like this:
-```
-4714965,Arapahoe,Raymon Anthony Doane
-```
-
-In order to parse and analyze the data, a python script was used, in conjunction with the `csv` module.  This guaranteed re-usability and improved performance over Excel & VB Script. 
-
-The script reads through every row once, incrementing the vote count for each of three candidates as well as the three counties.  Both sets of results are stored in dictionaries:
-```
-candidate_votes = { "Candidate Name": Num_Votes}
-county_votes = {"County Name": Num_Votes}
-
-```
-Where `Num_Votes` is an integer holding the vote count.
-
-After the script collects the results into the above dictionaries, a new text file `analysis\election_analysis.txt` is opened in write mode to collect the results.  A few simple calculations are made using the vote totals for each county and candidate, and the results are written to this file.  The same results are also written to the console, for debugging purposes.
-
-
-
-
+- If multiple .csv files are needed for the analysis, the script could be modified to take in any number of files in the `Resources` folder, and aggregate the results for all files.  This would prevent the user from needing to run the script for every file.
